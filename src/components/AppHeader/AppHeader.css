@@ -1,0 +1,36 @@
+.app-header {
+  background: #DB2B36;
+  color: white;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.app-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+.app-header__logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.app-header__logo-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.app-header__logo-text {
+  margin: 0;
+}

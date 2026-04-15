@@ -1,0 +1,40 @@
+/* src/pages/ModesPage.css */
+
+.modes-page {
+  padding-bottom: 40px;
+}
+
+.modes-page__search {
+  padding: 0 20px 24px;
+}
+
+.modes-page__title {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0 20px 24px;
+  letter-spacing: 1px;
+}
+
+.modes-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.modes-grid__container {
+  display: contents;
+}
+
+.modes-grid__loader,
+.modes-grid__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-size: 16px;
+}
