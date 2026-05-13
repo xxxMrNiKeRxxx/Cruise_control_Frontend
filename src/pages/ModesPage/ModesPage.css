@@ -1,0 +1,425 @@
+/* src/pages/ModesPage/ModesPage.css */
+
+.modes-page {
+  padding-bottom: 40px;
+}
+
+/* === Чёрная панель поиска (в одну строку) === */
+.toolbar {
+  background: #000;
+  padding: 12px 0;
+}
+
+.toolbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.search-form {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  background: white;
+  color: #333;
+  font-size: 13px;
+  outline: none;
+  border-radius: 2px 0 0 2px;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  background: #000;
+  color: white;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 0 2px 2px 0;
+  transition: background 0.3s;
+}
+
+.search-btn:hover {
+  background: #333;
+}
+
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 8px;
+  color: white;
+  cursor: default;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #DB2B36;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 50%;
+  min-width: 24px;
+  text-align: center;
+  border: 2px solid #1a1a1a;
+}
+
+/* === Заголовок каталога === */
+.catalog-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  margin: 30px 20px 20px;
+  letter-spacing: 1px;
+}
+
+/* === Сетка карточек === */
+.modes-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Карточка режима */
+.mode-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mode-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.mode-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Изображение + бейдж */
+.mode-card__image-wrapper {
+  position: relative;
+  height: 200px;
+  background: #f5f5f5;
+}
+
+.mode-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mode-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 4px;
+}
+
+.mode-badge.city { background: #1976d2; }      /* Город */
+.mode-badge.highway { background: #388e3c; }   /* Трасса */
+.mode-badge.mixed { background: #f57c00; }    /* Смешанный */
+
+/* Информация */
+.mode-card__content {
+  padding: 16px;
+}
+
+.mode-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #000;
+}
+
+.mode-card__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spec-icon {
+  font-size: 14px;
+}
+
+.spec-value {
+  font-weight: 600;
+  color: #000;
+}
+
+/* Кнопка "Добавить в заявку" — как на скрине */
+.mode-card__btn {
+  width: 100%;
+  padding: 12px;
+  background: #DB2B36;
+  color: white;
+  border: none;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.mode-card__btn:hover {
+  background: #b91d19;
+}
+
+.mode-card__btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* === Блок поиска по изображению — как на скрине === */
+.clip-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin: 20px auto;
+}
+
+.clip-card__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 12px;
+}
+
+.clip-card__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.clip-card__preview {
+  width: 120px;
+  height: 120px;
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  overflow: hidden;
+  position: relative;
+}
+
+.clip-card__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.clip-card__placeholder {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  padding: 0 8px;
+}
+
+.clip-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.clip-card__btn-upload {
+  padding: 10px 16px;
+  background: #DB2B36;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.clip-card__btn-upload:hover {
+  background: #b91d19;
+}
+
+.clip-card__btn-clear {
+  padding: 10px 16px;
+  background: transparent;
+  color: #DB2B36;
+  border: 1px solid #DB2B36;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.clip-card__btn-clear:hover {
+  background: rgba(219, 43, 54, 0.05);
+}
+
+.clip-card__file-input {
+  display: none;
+}
+
+/* === Стили для результатов CLIP-поиска — как обычные карточки === */
+
+.catalog-grid--clip {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.clip-result-row {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.clip-result-row:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Изображение + бейдж */
+.clip-result-row .mode-card__image-wrapper {
+  position: relative;
+  height: 200px;
+  background: #f5f5f5;
+}
+
+.clip-result-row .mode-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.clip-result-row .mode-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 4px;
+}
+
+.clip-result-row .mode-badge.city { background: #1976d2; }
+.clip-result-row .mode-badge.highway { background: #388e3c; }
+.clip-result-row .mode-badge.mixed { background: #f57c00; }
+
+/* Информация */
+.clip-result-row .mode-card__content {
+  padding: 16px;
+}
+
+.clip-result-row .mode-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #000;
+}
+
+.clip-result-row .mode-card__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.clip-result-row .spec-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clip-result-row .spec-icon {
+  font-size: 14px;
+}
+
+.clip-result-row .spec-value {
+  font-weight: 600;
+  color: #000;
+}
+
+/* Кнопка */
+.clip-result-row .mode-card__btn {
+  width: 100%;
+  padding: 12px;
+  background: #DB2B36;
+  color: white;
+  border: none;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.clip-result-row .mode-card__btn:hover {
+  background: #b91d19;
+}
+
+.clip-result-row .mode-card__btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Дополнительный текст под кнопкой — для сходства */
+.clip-result-row .similarity-value {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  font-weight: 700;
+  color: #DB2B36;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+}

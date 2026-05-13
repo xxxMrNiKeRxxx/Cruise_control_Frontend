@@ -1,0 +1,89 @@
+/* src/components/SearchField/SearchField.css */
+
+/* === Контейнер поиска (строка) === */
+.search-form {
+  display: flex !important; /* ✅ Принудительно в одну строку */
+  flex-direction: row !important;
+  align-items: stretch; /* ✅ Одинаковая высота полей */
+  gap: 0; /* ✅ Убираем разрыв между инпутом и кнопкой */
+  width: 100%;
+  max-width: 500px; /* ✅ Ограничение ширины */
+  margin: 0;
+  padding: 0;
+}
+
+/* === Поле ввода === */
+.search-form .search-input {
+  flex: 1 1 auto; /* ✅ Занимает всё доступное место */
+  min-width: 0; /* ✅ Позволяет сжиматься внутри flex */
+  height: 40px; /* ✅ Фиксированная высота */
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px 0 0 4px; /* ✅ Скругление только слева */
+  font-size: 14px;
+  background: #fff;
+  color: #333;
+  outline: none;
+  box-shadow: none !important; /* ✅ Убираем синий фокус Bootstrap */
+  border-right: 1px solid #ccc; /* ✅ Разделитель с кнопкой */
+}
+
+.search-form .search-input::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+.search-form .search-input:focus {
+  background: #fff;
+  color: #333;
+  box-shadow: none !important;
+  border-color: #ccc;
+}
+
+/* === Кнопка "Найти" === */
+.search-form .search-btn {
+  height: 40px; /* ✅ Та же высота, что у инпута */
+  padding: 0 20px;
+  background: #DB2B36; /* ✅ Чёрная кнопка */
+  color: #fff;
+  border: none;
+  border-radius: 0 4px 4px 0; /* ✅ Скругление только справа */
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap; /* ✅ Текст не переносится */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 0; /* ✅ Убираем внешние отступы Bootstrap */
+}
+
+.search-form .search-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.search-form .search-btn:active,
+.search-form .search-btn:focus {
+  background: #DB2B36 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* === Адаптив для мобильных === */
+@media (max-width: 480px) {
+  .search-form {
+    max-width: 100%;
+  }
+
+  .search-form .search-input {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .search-form .search-btn {
+    padding: 0 14px;
+    font-size: 13px;
+  }
+}
